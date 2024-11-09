@@ -5,29 +5,32 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
-import { FormComponent } from './components/form/form.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { IdeaDetailsComponent } from './components/idea-details/idea-details.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { RatingModule } from 'primeng/rating';
+import { AssessmentCardComponent } from './components/assessment-card/assessment-card.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    IdeaDetailsComponent,
     LandingComponent,
-    FormComponent,
     LoginComponent,
     NavbarComponent,
-    IdeaDetailsComponent
+    AssessmentCardComponent,
   ],
   imports: [
-
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatSnackBarModule,
-BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RatingModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration(),

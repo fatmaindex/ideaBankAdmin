@@ -40,7 +40,7 @@ This is an Angular-based login application that uses a simple authentication mec
 
 2. The application will be served at `http://localhost:4200`.
 
-3. The app will communicate with the `JSON server` running on `http://localhost:3003`.
+3. The app will communicate with the `JSON server` running on `http://localhost:3002`.
 
 ## Example Credentials
 

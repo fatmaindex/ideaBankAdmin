@@ -19,7 +19,6 @@
   justify-content: center;
 }
 .ideastable{
-  // background-color: rgb(108, 122, 224) !important;
   border-radius: 12px;
   overflow: hidden;
   border: none;
@@ -47,6 +46,50 @@
   background-color: rgb(91, 109, 243) !important;
   border: none;
   padding: 10px;
+}
+.topThree{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 90%;
+  gap: 2rem;
+  margin-bottom: 50px;
+  padding: 20px;
+  background-color: rgb(246, 246, 253);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.topThree .idea{
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+ 
+}
+.ideaStatus{
+  background-color: rgb(218, 218, 243);
+  border-radius: 20px;
+  width: 70px;
+  height: 30px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.totalRating{
+  display: flex;
+
+}
+.totalRating i{
+color: rgb(240, 205, 31);
 }
 @media (max-width: 768px) {
   .styled-table {

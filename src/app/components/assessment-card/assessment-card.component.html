@@ -1,0 +1,87 @@
+<div class="assessmentSec">
+ <div class="btns">
+    <button
+    class="backBtn"
+    (click)="navHome()"
+  >
+  <i class="fa-solid fa-arrow-left"></i>
+    back to home
+  </button>
+    <div class="overview-btn" >
+        <button class="btn1" (click)=" detailsCom()" [ngClass]="{ 'activeBtn': activeButton === 'btn1' }">
+          Idea Overview</button>
+        <button class="btn2" (click)="navAsseessment()" [ngClass]="{ 'activeBtn': activeButton === 'btn2' }">
+          Assessment Card</button>
+    </div>
+ </div>
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <h3 class="card-title">{{ currentIdea?.title }}</h3>
+  
+        <h4 class="mt-3">Description</h4>
+        <p>{{ currentIdea?.description }}</p>
+  
+        <h4 class="mt-3">Problem Description</h4>
+        <p>{{ currentIdea?.problemDescription }}</p>
+  
+        <h4 class="mt-3">Effect of the Idea</h4>
+        <p>{{ currentIdea?.ideaEffect }}</p>
+      </div>
+    </div>
+    <!-- Rating Section -->
+     <form class="rating"  [formGroup]="ratingForm" (ngSubmit)="onSubmitRating(currentIdea?.id)">
+    <div class="criterias">
+      <div class="criteria">
+        <h5>Alignment with Business Goals</h5>
+        <p-rating [stars]="5"  cancel="false" formControlName="Alignment"></p-rating>
+
+      </div>
+      <div class="criteria">
+        <h5>Innovation and Creativity</h5>
+        <p-rating [stars]="5" cancel="false" formControlName="innovation"></p-rating>
+      </div>
+      <div class="criteria">
+        <h5>Feasibility and Ease of Implementation</h5>
+        <p-rating [stars]="5" cancel="false" formControlName="feasibility"></p-rating>
+      </div>
+      <div class="criteria">
+        <h5>Scalability and Sustainability</h5>
+        <p-rating [stars]="5"  cancel="false"  formControlName="scalability"></p-rating>
+      </div>
+    </div>
+    <div class="additionalMassage">
+      <label for="comment">this comment will apper in author screen</label>
+      <div class="ideaStatus">
+        <textarea
+          name="comment"
+          class="comment"
+          formControlName="comment"
+        ></textarea>
+        <div class="ideaStatus">
+          <button 
+            type="button" 
+            class="status" 
+            [disabled]="ratingForm.disabled"
+            formControlName="status"
+            [ngClass]="{'stausActive': ratingForm.get('status')?.value === 'selected' }"
+            (click)="setStatus('selected')"
+            >
+            <i class="fa-solid fa-check"></i> Selected
+          </button>
+          <button 
+            type="button" 
+            class="status" 
+            [disabled]="ratingForm.disabled"    
+            [ngClass]="{'stausActive': ratingForm.get('status')?.value === 'declined' }"
+            (click)="setStatus('declined')"
+            >
+            <i class="fa-solid fa-x"></i> Declined
+          </button>
+        </div>
+      </div>
+      <button type="submit"  class="submit">Submit</button>
+    </div>
+    
+  </form>
+  
+</div>

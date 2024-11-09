@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ideaBank": {
+    "ideaBankAdmin": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/idea-bank",
+            "outputPath": "ideaBankAdmin",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -85,7 +85,7 @@
               "buildTarget": "ideaBank:build:production"
             },
             "development": {
-              "buildTarget": "ideaBank:build:development"
+              "buildTarget": "ideaBankAdmin:build:development"
             }
           },
           "defaultConfiguration": "development"

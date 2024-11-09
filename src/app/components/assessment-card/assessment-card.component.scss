@@ -13,24 +13,18 @@
 .overview-btn .btn1,
 .overview-btn .btn2 {
   border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
   border: none;
-  background-color: rgb(108, 122, 224);
   width: 50%;
   height: 30px;
   color: white;
 }
-.overview-btn .btn2 {
+.overview-btn .btn1 {
   background-color: rgb(197, 197, 201);
-
 }
-.ideaDetailesSec {
+.assessmentSec {
   width: 100%;
   position: relative;
-  padding: 40px 20px 60px 20px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,8 +34,7 @@
 .card {
   width: 50%;
   justify-self: center;
-  margin: 30px 0;
-
+  margin: 40px 0 30px 0;
 }
 .card h3 {
   text-align: center;
@@ -122,13 +115,15 @@
   padding: 20px;
   margin-bottom: 15px;
   background-color: #ffffff;
-  border: 3px solid rgb(108, 122, 224);
+  border: 3px solid rgb(159, 159, 165);
   height: 100px;
   border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+}
+.status:hover {
+  border: 3px solid rgb(108, 122, 224);
+}
+.stausActive {
+  border: 3px solid rgb(108, 122, 224);
 }
 .rating {
   width: 100%;
@@ -137,7 +132,7 @@
   align-items: center;
   justify-content: center;
 }
-.btns{
+.btns {
   width: 100%;
   padding-left: 50px;
   height: 40px;
@@ -147,28 +142,41 @@
   align-items: flex-start;
   justify-content: center;
 }
-.backBtn{
-  border: 2px solid  rgb(108, 122, 224);
+.backBtn {
+  border: 2px solid rgb(108, 122, 224);
   background-color: white;
   width: 150px;
-  text-align:center;
-  color:  rgb(108, 122, 224);
+  text-align: center;
+  color: rgb(108, 122, 224);
   border-radius: 20px;
+}
+.activeBtn {
+  background-color: rgb(108, 122, 224) !important;
+}
+// .custom-snackbar {
+//   position: fixed !important;
+//   top: 0 !important;
 
-}
-.totalRating{
-  display: flex;
+// }
+// ::ng-deep .mat-snack-bar-container {
+//     top: 0 !important; /* Forces snackbar to display at the top */
+//     bottom: auto !important; /* Ensures it doesn't go to the bottom */
+// }
 
-}
-.totalRating i{
-color: rgb(240, 205, 31);
-}
 p-rating {
   color: rgb(234, 196, 29);
-  height: 400px;
-  width: 300px;
 }
-p-rating input[type="radio" i] {
-  display: none !important;
-}
-
+// .mat-mdc-snack-bar-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   box-sizing: border-box;
+//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+//   position: absolute !important;
+//   top: 0 !important; 
+//   left: 50% !important;
+//   transform: translateX(-50%); 
+//   margin: 0; 
+//   width: auto;
+//   z-index: 1000; 
+// }

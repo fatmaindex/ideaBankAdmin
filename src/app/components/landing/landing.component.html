@@ -1,5 +1,15 @@
 <div class="ideasSection">
-  <h1>Proposed Ideas</h1>
+  <h1>Top three</h1>
+  <div class="topThree">
+    <div class="idea" *ngFor="let idea of topThreeIdeas; let index=index">
+      <h4>#{{index+1}}</h4>
+      <p class="ideaTitle">{{idea.title}}</p>
+      <h5 class="ideaPresenter">{{idea.userName}}</h5>
+      <div class="totalRating">
+        <i class="fa-solid fa-star"></i> <h6>{{idea.totalEvaluation}}</h6>
+      </div>
+    </div>
+  </div>
   <div class="tableContainer col-12">
     <table class="table table-hover table-sm ideastable">
       <thead>
@@ -7,6 +17,8 @@
           <th scope="col">ID</th>
           <th scope="col">Name</th>
           <th scope="col">Title</th>
+          <th scope="col">Status</th>
+          <th scope="col">Date</th>
           <th scope="col">Details</th>
         </tr>
       </thead>
@@ -15,6 +27,8 @@
           <td>{{ index + 1 }}</td>
           <td class="name">{{ idea.userName }}</td>
           <td>{{ idea.title }}</td>
+          <td><div class="ideaStatus">{{ idea.ideaStatus }}</div></td>
+          <td>{{ idea.submissionDate }}</td>
           <td>
             <button
               class="badge text-light detailsBtn"

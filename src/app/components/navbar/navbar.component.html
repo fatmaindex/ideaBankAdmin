@@ -1,8 +1,6 @@
 <nav class="nav justify-content-center">
   <h2>Idea Bank</h2>
   <div class="nav-links">
-    <a class="nav-link active" routerLink="/landing" aria-current="page" routerLinkActive="active">home</a>
-    <a class="nav-link" routerLink="/form"  routerLinkActive="active">form</a>
     <a class="nav-link" routerLink="/login" [hidden]="isUserloged" routerLinkActive="active">login</a>  
      <a class="nav-link" routerLink="/login"><button class="logoutBtn" [hidden]="!isUserloged" (click)="logout()"> logout</button></a>
   </div>
