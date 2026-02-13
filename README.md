@@ -1,69 +1,42 @@
+# 💡 Idea Bank - Admin Dashboard
 
-# Login Application
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![RxJS](https://img.shields.io/badge/RxJS-B7178C?style=for-the-badge&logo=reactivex&logoColor=white)
 
-## Description
+**IdeaBankAdmin** is a sophisticated management panel designed to moderate and evaluate innovative ideas. It features a custom scoring algorithm to rank submissions and a secure authentication system for administrators.
 
-This is an Angular-based login application that uses a simple authentication mechanism with JSON server for user credentials. Users can log in using the provided credentials, and their session is managed via `localStorage`.
+---
 
-## Features
+## 🚀 Key Features
 
-- User login with validation (username and password).
-- Session management using `localStorage`.
-- Authentication using a mock backend (`JSON server`).
-- Protected routes based on user authentication status.
+* **Smart Evaluation System:** Rate ideas based on 4 scientific metrics: **Alignment, Innovation, Feasibility, and Scalability**.
+* **Dynamic Ranking (Top 3):** An automated algorithm that filters and ranks the top 3 highest-rated ideas for quick decision-making.
+* **Secure Authentication:** Session management using `localStorage` and `BehaviorSubject` for real-time UI updates.
+* **Route Protection:** Built-in `AuthGuard` to ensure only authorized admins can access the dashboard.
+* **Mock Backend Integration:** Seamless communication with a JSON Server to simulate a real production environment.
 
-## Table of Contents
+---
 
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Example Credentials](#example-credentials)
-- [Login Functionality](#login-functionality)
-- [Logout Functionality](#logout-functionality)
-- [API Integration](#api-integration)
+## 🛠 Technical Architecture
 
+### Scoring Logic
+The system automatically calculates a score out of **5** using the following formula:
+> **Total Score** = `((Alignment + Innovation + Feasibility + Scalability) / 20) * 5`
 
-## Installation
+### Project Structure
+* **AuthService:** Manages tokens and login states.
+* **IdeaService:** Handles CRUD operations, evaluation updates, and the "Top 3" filtering logic.
+* **UserService:** Manages admin profile data and credentials verification.
 
-1. Clone the repository:
+---
 
-    ```bash
-    git clone https://github.com/fatmaindex/ideaBankPortal.git
-    ```
+## 💻 Installation & Setup
 
-## Running the Application
-
-1. To start the Angular application, run the following command:
-
-    ```bash
-    ng serve
-    ```
-
-2. The application will be served at `http://localhost:4200`.
-
-3. The app will communicate with the `JSON server` running on `http://localhost:3002`.
-
-## Example Credentials
-
-Use the following credentials to log into the application:
-
-- **Username**: `fatma`
-- **Password**: `password123`
-
-- **Username**: `nora`
-- **Password**: `password345`
-
-## Login Functionality
-
-- Users can log in by providing the correct username and password.
-- If the credentials are correct, a session token is stored in `localStorage` to keep the user logged in across page refreshes.
-- Upon login, the user is redirected to the landing page.
-
-## Logout Functionality
-
-- Users can log out by clicking the **Logout** button.
-- The session token is removed from `localStorage`, and the user is redirected to the login page.
-
-## API Integration
-
-The application uses the `JSON server` to simulate a backend service. The login service queries the server to validate user credentials. 
-
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/fatmaindex/ideaBankAdmin.git](https://github.com/fatmaindex/ideaBankAdmin.git)
+   cd ideaBankAdmin
+Install dependencies:Bashnpm install
+Start the Mock Server (JSON Server):Ensure your JSON server is running on http://localhost:3002 (as configured in environments).Run the Application:Bashng serve
+Open http://localhost:4200 in your browser.🔐 Example CredentialsUse these credentials to access the admin panel:UsernamePasswordRolefatmapassword123Administratornorapassword345Administrator📡 API Endpoints SummaryActionEndpointMethodLogin / Auth/usersGETFetch Ideas/ideasGETEvaluate Idea/ideas/:idPUTCreate Idea/ideasPOST📝 Development NoteThis project uses RxJS Observables to ensure the UI stays in sync with the data. When an idea is rated, the "Top Three" list updates automatically without requiring a page refresh.
