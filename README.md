@@ -37,6 +37,31 @@ The system automatically calculates a score out of **5** using the following for
    ```bash
    git clone [https://github.com/fatmaindex/ideaBankAdmin.git](https://github.com/fatmaindex/ideaBankAdmin.git)
    cd ideaBankAdmin
+   
 Install dependencies:Bashnpm install
-Start the Mock Server (JSON Server):Ensure your JSON server is running on http://localhost:3002 (as configured in environments).Run the Application:Bashng serve
-Open http://localhost:4200 in your browser.🔐 Example CredentialsUse these credentials to access the admin panel:UsernamePasswordRolefatmapassword123Administratornorapassword345Administrator📡 API Endpoints SummaryActionEndpointMethodLogin / Auth/usersGETFetch Ideas/ideasGETEvaluate Idea/ideas/:idPUTCreate Idea/ideasPOST📝 Development NoteThis project uses RxJS Observables to ensure the UI stays in sync with the data. When an idea is rated, the "Top Three" list updates automatically without requiring a page refresh.
+Start the Mock Server (JSON Server):Ensure your JSON server is running on http://localhost:3002 (as configured in environments).
+Run the Application:
+ng serve
+Open http://localhost:4200 in your browser.
+---
+
+🔐 Example CredentialsUse these credentials to access the admin panel
+:UsernamePasswordRole
+fatma password123 Administrator
+nora password345 Administrator
+---
+
+
+📡 API Endpoints Summary
+Action Endpoint Method
+Login/ Auth/users GET
+FetchIdeas/ideas  GET
+EvaluateIdea/ideas/:id  PUT 
+Create Idea/ideas POST
+---
+
+Development Note
+This project uses RxJS Observables to ensure the UI stays in sync with the data. When an idea is rated, the "Top Three" list updates automatically without requiring a page refresh.
+
+
+
